@@ -1,7 +1,25 @@
 p strong {
+    /* Este font-family duplica lo que probablemente ya viene de .tabla u otro
+       estilo padre; si no hay ninguna regla más general definida, está bien
+       dejarlo aquí explícito */
     font-family: "Trebuchet MS", Arial;
+
+    /* font-size más pequeño que el texto normal (16px en otros archivos) es
+       inusual para <strong>, que normalmente se usa para dar énfasis/mayor
+       peso visual, no para reducir el tamaño. Vale la pena confirmar que
+       esto es intencional */
     font-size: 12px;
+
+    /* text-align no tiene efecto aquí: <strong> es un elemento inline por
+       defecto, y text-align solo aplica a elementos de bloque (o a un
+       contenedor de texto). Esta línea es ignorada por el navegador salvo
+       que <strong> se convierta a "display: block" o "inline-block" */
     text-align: justify;
+
     color: #34484E;
+
+    /* background-color en un elemento inline funciona correctamente y
+       genera el efecto de "resaltado" (similar al usado en .attention en
+       otro archivo del laboratorio) */
     background-color: #ffc;
 }
