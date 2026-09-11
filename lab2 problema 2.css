@@ -1,3 +1,6 @@
+/* Falta "border-collapse: collapse;" en .tabla.
+   Sin esta propiedad, los bordes de celdas adyacentes se duplican
+   y se ven "gruesos" o desalineados en vez de una sola línea limpia. */
 .tabla {
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -15,9 +18,15 @@
     border-right-style: solid;
     border-right-color: #558EA6;
 
+    /* Se define border-bottom-width y border-bottom-style, pero no
+       border-bottom-color. Queda dependiendo del color del texto
+       (currentColor), lo cual es inconsistente con el border-right
+       que sí especifica su color de forma explícita. */
     border-bottom-width: 1px;
     border-bottom-style: solid;
 
+    /* font-family ya está declarado en .tabla y es una propiedad heredada;
+       esta redeclaración es redundante (se repite también en modo1 y modo2). */
     font-family: "Trebuchet MS", Arial;
     text-transform: uppercase;
 }
@@ -38,6 +47,11 @@
     text-align: left;
 }
 
+/* Este selector aplica al elemento con clase "modo2" en sí (presumiblemente
+   una <tr>), no a sus celdas. Nota la inconsistencia de estructura frente
+   a .modo1, que se aplica directamente sobre "td". Si la intención era
+   estilizar la fila completa, falta confirmar que el HTML realmente
+   use class="modo2" en el <tr> y no en el <td>. */
 .tabla .modo2 {
     padding: 5px;
 
@@ -58,7 +72,15 @@
     background-color: #fdfdf1;
     color: #990000;
 
+    /* Falta border-bottom-width aquí. border-width no es una propiedad
+       heredada, así que el ancho definido en ".modo2" (el <tr>) no se
+       aplica a estos <td>; el navegador usará el ancho por defecto
+       (normalmente "medium", más grueso que 1px). */
     border-bottom-style: solid;
+
+    /* Se define border-right-color pero no border-right-style.
+       Sin "border-right-style: solid;", este borde derecho no se
+       renderiza en absoluto (el estilo por defecto es "none"). */
     border-right-color: #EBE9BC;
 
     font-family: "Trebuchet MS", Arial;
