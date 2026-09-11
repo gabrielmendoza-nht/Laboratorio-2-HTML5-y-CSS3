@@ -74,82 +74,11 @@
     <nav>
 
         <ul>
+            <!-- Estos dos enlaces apuntan a #inicio y #contacto, pero en
+                 todo el documento no existe ningún elemento con
+                 id="inicio" ni id="contacto". Son enlaces rotos:
+                 al hacer clic, el navegador no desplazará la página
+                 a ningún lado -->
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#cursos">Cursos</a></li>
             <li><a href="#contacto">Contacto</a></li>
-        </ul>
-
-    </nav>
-
-
-    <!-- Contenido principal -->
-    <main>
-
-        <!-- Sección general de contenido -->
-        <section id="cursos">
-
-            <h2>Nuestros Cursos Disponibles</h2>
-
-            <p>
-                Aquí agrupamos información relacionada con la oferta
-                académica de programación.
-            </p>
-
-
-            <!-- Artículo independiente dentro de la sección -->
-            <article>
-
-                <h3>Curso de Backend con PHP</h3>
-
-                <p>
-                    Aprende a manejar bases de datos, lógica de servidores
-                    y frameworks modernos.
-                </p>
-
-            </article>
-
-
-            <!-- Otro artículo independiente -->
-            <article>
-
-                <h3>Curso de CSS Avanzado</h3>
-
-                <p>
-                    Domina la cascada, especificidad, selectores y diseños
-                    responsivos.
-                </p>
-
-            </article>
-
-        </section>
-
-
-        <!-- Barra lateral o contenido complementario -->
-        <aside>
-
-            <h4>Aviso Importante</h4>
-
-            <p>
-                HTML5 es la quinta y última versión del Lenguaje
-                de Marcado de Hipertexto.
-            </p>
-
-        </aside>
-
-    </main>
-
-
-    <!-- Pie de página -->
-    <footer>
-
-        <p>
-            &copy;
-            <?php echo date("Y"); ?>
-            Universidad Tecnológica de Panamá.
-            Todos los derechos reservados.
-        </p>
-
-    </footer>
-
-</body>
-</html>
