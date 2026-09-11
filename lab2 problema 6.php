@@ -50,6 +50,15 @@
             border: 2px solid black;
         }
 
+        /* El problema pedagógico está aquí: "p strong" (descendiente) y
+           "p > strong" (hijo directo) solo se comportan distinto cuando el
+           <strong> NO es hijo directo de <p> sino que está más anidado
+           (por ejemplo dentro de un <em> o <span> intermedio). En el HTML
+           de abajo, los DOS ejemplos de <strong> son hijos directos de <p>,
+           así que ambos selectores coinciden en ambos casos y el resultado
+           visual es idéntico. El ejemplo no llega a demostrar la diferencia
+           real entre selector descendiente y selector hijo */
+
     </style>
 
 </head>
@@ -69,6 +78,9 @@
         Este párrafo utiliza un selector de clase.
     </p>
 
+    <!-- Este <strong> es hijo directo de <p>: coincide tanto con
+         "p strong" como con "p > strong". Recibirá fondo amarillo
+         Y borde negro -->
     <p>
         Este texto contiene un elemento
         <strong>strong directamente dentro del párrafo</strong>.
@@ -76,6 +88,11 @@
 
     <div>
 
+        <!-- Este <strong> también es hijo directo de su <p> (el <div>
+             que lo envuelve no cambia esa relación, porque la relación
+             padre-hijo se evalúa entre <p> y <strong>, no con el <div>).
+             Por eso recibe exactamente el mismo estilo que el anterior,
+             en vez de mostrar una diferencia -->
         <p>
             Este párrafo también contiene un
             <strong>elemento strong</strong>.
