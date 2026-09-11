@@ -13,6 +13,11 @@
     <meta name="author"
           content="Profesor de Desarrollo Web">
 
+    <!-- A diferencia de otros archivos del laboratorio (que usan "Description",
+         "Author" con mayúscula inicial), aquí se usa minúsculas. Los nombres de
+         meta son insensibles a mayúsculas para el navegador, pero conviene
+         mantener un mismo estilo en todo el proyecto -->
+
     <title>Ejemplo Integral con Metadatos</title>
 
     <style>
@@ -49,6 +54,10 @@
             text-decoration: underline;
         }
 
+        /* Esta regla no se usa en ningún lado del HTML: no hay ningún
+           elemento <code> en el cuerpo del documento. Es CSS muerto;
+           conviene eliminarlo o usarlo en algún ejemplo (por ejemplo,
+           mostrando una etiqueta HTML como texto) */
         code {
             background-color: #e2e8f0;
             padding: 0.2em 0.4em;
@@ -74,6 +83,13 @@
             Para obtener más información técnica, puedes visitar el siguiente
 
             <!-- Usamos una clase (.link-externo) para estilizar este enlace -->
+            <!-- Buena práctica: se usa rel="noopener" junto con target="_blank",
+                 lo cual evita que la página nueva tenga acceso a "window.opener"
+                 (previene un vector de seguridad conocido) -->
+            <!-- Punto de accesibilidad: como el enlace abre en una pestaña nueva,
+                 sería recomendable añadir algo como aria-label="Enlace a PHP
+                 (se abre en una pestaña nueva)" para avisar a usuarios de
+                 lectores de pantalla -->
             <a href="https://es.wikipedia.org/wiki/PHP"
                target="_blank"
                rel="noopener"
@@ -83,6 +99,9 @@
         </p>
 
         <!-- Usamos un ID (#footer-recurso) para un pie de sección -->
+        <!-- Uso correcto de <footer> anidado dentro de <section>: en HTML5
+             esto es válido y representa el pie de esa sección en particular,
+             no el pie de toda la página -->
         <footer id="footer-recurso">
             <p>
                 <strong>Nota:</strong>
